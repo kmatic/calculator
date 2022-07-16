@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.calculator {
+    background-color: rgb(178, 179, 180);
+    width: 550px;
+    height: 700px;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    height: 25%;
+    background-color: rgb(210, 213, 216);
+    margin-bottom: 24px;
+    border-radius: 6px;
+}
+
+.buttons {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
