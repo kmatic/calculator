@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 body {
+    font-family: 'Lato', sans-serif;
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -16,10 +19,15 @@ body {
 }
 
 .display {
+    display: flex;
     height: 25%;
     background-color: rgb(210, 213, 216);
+    font-size: 24px;
     margin-bottom: 24px;
     border-radius: 6px;
+    padding: 24px;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 .buttons {
@@ -27,4 +35,9 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+}
+
+.btn {
+    border-radius: 6px;
+    font-size: 18px;
 }
