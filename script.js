@@ -59,9 +59,6 @@ function clearDisplay() {
 }
 
 function calculate() {
-    // if (displayVal != '') {
-    //     secondNum = current.textContent;
-    // }
     if (operatorVal == '') {
         return;
     }
