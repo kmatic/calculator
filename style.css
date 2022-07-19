@@ -10,8 +10,8 @@ body {
 
 .calculator {
     background-color: rgb(178, 179, 180);
-    width: 550px;
-    height: 700px;
+    width: 500px;
+    height: 650px;
     border-radius: 12px;
     padding: 24px;
     display: flex;
@@ -20,21 +20,22 @@ body {
 
 .display {
     display: flex;
-    height: 25%;
+    flex-direction: column;
+    height: 15%;
     background-color: rgb(210, 213, 216);
     font-size: 24px;
     margin-bottom: 24px;
     border-radius: 6px;
     padding: 24px;
     align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .buttons {
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 12px;
 }
 
 .btn {
