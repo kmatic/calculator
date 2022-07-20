@@ -5,6 +5,8 @@ const previous = document.querySelector('.previous');
 const clearBtn = document.querySelector('#clear');
 const deleteBtn = document.querySelector('#delete');
 const equalsBtn = document.querySelector('#equals');
+const signBtn = document.querySelector('#sign');
+const decimalBtn = document.querySelector('#decimal');
 
 let displayVal = current.textContent;
 let operatorVal = ''; 
@@ -15,6 +17,8 @@ let result = '';
 deleteBtn.addEventListener('click', () => deleteDisplay());
 clearBtn.addEventListener('click', () => clearDisplay());
 equalsBtn.addEventListener('click', () => calculate());
+signBtn.addEventListener('click', () => signChange());
+decimalBtn.addEventListener('click', () => addDecimal());
 
 numberBtn.forEach(button => {
     button.addEventListener('click', () => updateDisplay(button.textContent));
@@ -27,7 +31,7 @@ operatorBtn.forEach(button => {
 function updateDisplay(value) {
     if (current.textContent == '0' || displayVal == '') {
         current.textContent = '';
-    }
+    } 
     current.textContent += value;
     displayVal = current.textContent;
 }
@@ -40,7 +44,6 @@ function setOperator(operator) {
     firstNum = current.textContent;
     displayVal = '';
     previous.textContent = `${firstNum} ${operatorVal}`;
-    console.log(operatorVal);
 }
 
 function deleteDisplay() {
@@ -64,11 +67,27 @@ function calculate() {
     }
     secondNum = current.textContent;
     result = operate(operatorVal, parseFloat(firstNum), parseFloat(secondNum));
-    current.textContent = result;
+    current.textContent = Math.round(result * 100) / 100;
     previous.textContent = `${firstNum} ${operatorVal} ${secondNum} =`;
     operatorVal = '';
     secondNum = '';
     displayVal = '';
+}
+
+function signChange() {
+    if (current.textContent.includes('-')) {
+        current.textContent = current.textContent.substring(1);
+    } else {
+        current.textContent = `-${current.textContent}`;
+    }
+}
+
+function addDecimal() {
+    if (current.textContent.includes('.')) {
+        return;
+    } else {
+        current.textContent += '.';
+    }
 }
 
 function add(a, b) {
