@@ -13,6 +13,7 @@ body {
     width: 500px;
     height: 650px;
     border-radius: 12px;
+    border: 2px solid black;
     padding: 24px;
     display: flex;
     flex-direction: column;
@@ -21,24 +22,54 @@ body {
 .display {
     display: flex;
     flex-direction: column;
-    height: 15%;
-    background-color: rgb(210, 213, 216);
-    font-size: 24px;
+    height: 20%;
+    background-color: rgb(247, 247, 247);
     margin-bottom: 24px;
     border-radius: 6px;
+    border: 2px solid black;
     padding: 24px;
-    align-items: flex-end;
+    text-align: right;
     justify-content: space-between;
+    word-break: break-all;
 }
 
 .buttons {
     flex-grow: 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 16px;
 }
 
 .btn {
     border-radius: 6px;
-    font-size: 18px;
+    font-size: 20px;
+}
+
+.current {
+    font-size: 46px;
+}
+
+.previous {
+    font-size: 28px;
+    opacity: 0.7;
+}
+
+#divide {
+    font-size: 24px;
+}
+
+#clear {
+    background-color: lightcoral;
+}
+
+#delete {
+    background-color: lightblue;
+}
+
+.btn:hover {
+    filter: brightness(80%);
+}
+
+.btn:active {
+    filter: brightness(50%);
 }

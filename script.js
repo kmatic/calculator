@@ -67,11 +67,15 @@ function calculate() {
     }
     secondNum = current.textContent;
     result = operate(operatorVal, parseFloat(firstNum), parseFloat(secondNum));
-    current.textContent = Math.round(result * 100) / 100;
-    previous.textContent = `${firstNum} ${operatorVal} ${secondNum} =`;
-    operatorVal = '';
-    secondNum = '';
-    displayVal = '';
+    if (typeof result === 'number') {    
+        current.textContent = Math.round(result * 100) / 100;
+        previous.textContent = `${firstNum} ${operatorVal} ${secondNum} =`;
+        operatorVal = '';
+        secondNum = '';
+        displayVal = '';
+    } else {
+        current.textContent = result;
+    }
 }
 
 function signChange() {
@@ -104,6 +108,7 @@ function multiply(a , b) {
 
 function divide(a , b) {
     if (b == 0) {
+        alert('Cannot divide by 0');
         return 'OOPS';
     }
     return a / b;
@@ -111,6 +116,7 @@ function divide(a , b) {
 
 function remainder(a , b) {
     if (b == 0) {
+        alert('Cannot divide by 0');
         return 'OOPS';
     }
     return a % b;
@@ -120,7 +126,7 @@ function operate(operator, a, b) {
     switch (operator) {
         case '+':
             return add(a, b);
-        case '-':
+        case '−':
             return subtract(a, b);
         case '×':
             return multiply(a, b);
